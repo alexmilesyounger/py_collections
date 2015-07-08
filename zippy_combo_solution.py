@@ -59,3 +59,21 @@ def combo(iter1, iter2):
     temp_tuple = (a, b)
     list_of_tuples.append(temp_tuple)
   return list_of_tuples  
+
+
+# You can iterate over one of the lists,along with saving its index position using enumerate, then access the second list using that index. Now you have items from each list in variables, you can append them to the output list using tuples
+def combo(iter1, iter2):
+  list_of_tuples = []
+  for index, value in enumerate(iter1):
+    a = value
+    b = iter2[index]
+    temp_tuple = (a, b)
+    list_of_tuples.append(temp_tuple)
+  return list_of_tuples
+
+# OR ... more condensed
+def combo(iter1, iter2):
+  list_of_tuples = []
+  for index, value in enumerate(iter1):
+    list_of_tuples.append((value, iter2[index]))
+  return list_of_tuples
